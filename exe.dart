@@ -31,6 +31,7 @@ void main() {
     'idade' : '17',
     'cor' : 'azul',
   };
+  print(meuMapSemTipagem);
 //tbm é um método
   final result = <String, dynamic>{};
   result.addAll({'nome':'Júlia'});

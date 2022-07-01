@@ -18,20 +18,20 @@ void main() {
   // ];
   // print(listaSet);
 
-  // List<Set<Map>> sets = [
-  //   {
-  //     {'nome':'julia'},
-  //     {'nome':'julia'},
-  //   },
-  //   {
-  //     {'nome':'julia'},
-  //     {'nome':'julia'},
-  //   }
-  //];
+  List<Set<Map>> sets = [
+    {
+      {'nome':'julia'},
+      {'nome':'julia'},
+    },
+    {
+      {'nome':'julia'},
+      {'nome':'julia'},
+    }
+  ];
   Map meuMap = {'nome': 'julia'};
   Map meuMap2 = {'nome': 'julia'};
   Set<Map> meuSet = {meuMap, meuMap2};
-  List<Set> sets = [meuSet, meuSet];
+  List<Set> sets1 = [meuSet, meuSet];
 
-  print(sets[0].elementAt(0));
+  print(sets1[0].elementAt(0));
 }
