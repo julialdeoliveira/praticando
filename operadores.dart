@@ -39,6 +39,17 @@ void main(){
 
   // nota1 = (nota1 ~/ 2).toDouble();
   // nota1 ~/= 2;
+  // nota1 += 1;
+  // nota1++;
+
+
+  // for (int index = 0; index < 4; index++){
+  //   print(index);
+  // }
+
+  // int nota1 = 0;
+  // print(nota1++); //Resultado 0
+  // print(++nota1); //Resultado 1
 
   // //Type Test
   // nota1 = (nota1 ~/ 2) as double; // Fazendo um cast, porém o melhor é usar o .toDouble por ser mais seguro
@@ -49,15 +60,15 @@ void main(){
   // print(nota2 is! int);
   // print(nota1.runtimeType);
 
-  int numero1 = 9;
-  double numero3 = 50;
+  // int numero1 = 9;
+  // double numero3 = 50;
 
-  print(numero1 is double);
-  print(numero1 is! double);//
-  print(numero3 is double);
-  print(numero3 is! double); // pergunta se é diferente de double, logo retorna falso
+  // print(numero1 is double);
+  // print(numero1 is! double);//
+  // print(numero3 is double);
+  // print(numero3 is! double); // pergunta se é diferente de double, logo retorna falso
 
-
+  
 
 
 
