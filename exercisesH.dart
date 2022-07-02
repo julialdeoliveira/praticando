@@ -1,11 +1,11 @@
 import 'dart:io';
 
+import 'dart:math';
+
 // Exercise 1
-// Create a program that asks the user to enter their name and their age. 
+// Create a program that asks the user to enter their name and their age.
 // Print out a message that tells how many years they have to be 100 years old.
-void main(){
-
-
+void main() {
   // print('Digite seu nome');
   // String? nome = stdin.readLineSync();
   // print('Digite sua idade');
@@ -14,9 +14,9 @@ void main(){
   // print('$nome, falta $yearsto100 para você fazer 100 anos');
 
 //   Exercise 2
-// Ask the user for a number. Depending on whether the number is even or odd, print 
+// Ask the user for a number. Depending on whether the number is even or odd, print
 // out an appropriate message to the user.
-// 
+//
 
 // print("How's the whether?");
 // int whether = int.parse(stdin.readLineSync()!);
@@ -40,9 +40,8 @@ void main(){
 // Exercise 4
 // Create a program that asks the user for a number and then prints out a list of all the divisors of that number.
 
-// If you don’t know what a divisor is, it is a number that divides evenly into another number. 
+// If you don’t know what a divisor is, it is a number that divides evenly into another number.
 // For example, 13 is a divisor of 26 because 26 / 13 has no remainder.
-
 
 // print('Write a number');
 // int? numbero = int.parse(stdin.readLineSync()!);
@@ -51,7 +50,7 @@ void main(){
 //   {
 //     print(i);
 //   }
-// } 
+// }
 
 // Exercise 5
 // Take two lists, for example:
@@ -59,7 +58,7 @@ void main(){
 //   a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
 //   b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-// and write a program that returns a list that contains only the elements that are 
+// and write a program that returns a list that contains only the elements that are
 // common between them (without duplicates). Make sure your program works on two lists of different sizes.
 
 // List<int> list1 = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
@@ -84,7 +83,6 @@ void main(){
 // String word = (stdin.readLineSync()!);
 // String revWord = word.split('').reversed.join('');
 
-
 // if(word == revWord){
 //   print('The word is palindrome');
 // }
@@ -96,27 +94,60 @@ void main(){
 // Exercise 7
 // Let’s say you are given a list saved in a variable:
 
-// a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]. 
+// a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100].
 // Write a Dart code that takes this list and makes a new list that has only the even elements of this list in it.
 
-List<int> list1 = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
-List<int> list2 = [];
+// List<int> list1 = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
+// List<int> list2 = [];
 
-for (var i in list1){
-  if( i % 2 == 0)
-  {
-    (list2.add(i));
+// for (var i in list1){
+//   if( i % 2 == 0)
+//   {
+//     (list2.add(i));
+//   }
+// }
+// print(list2);
+
+// Exercise 8
+// Make a two-player Rock-Paper-Scissors game against computer.
+
+// Ask for player’s input, compare them, print out a message to the winner.
+
+  int? player;
+  int? computer;
+
+  print('Type 1 for rock, 2 for scissors and 3 for paper');
+  player = int.parse(stdin.readLineSync()!);
+
+  var randomNumber = Random();
+  computer = randomNumber.nextInt(3);
+  computer ++;
+
+  if (player == 0 || player > 3) {
+    print('You cant choose this number');
+  } else {
+    if (computer != player) {
+      if (computer == 1) {
+        if (player == 2) {
+          print('You lost, computer chose rock');
+        } else {
+          print('You won, computer chose rock');
+        }
+      } else if (computer == 2) {
+        if (player == 3) {
+          print('You lost, computer chose scissors');
+        } else {
+          print('You won, computer chose scissors');
+        }
+      } else {
+        if (player == 1) {
+          print('You lost, computer chose paper');
+        } else {
+          print('You won, computer chose paper');
+        }
+      }
+    } else {
+      print('We are tied my friend :)');
+    }
   }
 }
-print(list2);
-
-
-}
-
-
-
-
-
-
-
-
