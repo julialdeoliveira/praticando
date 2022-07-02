@@ -116,38 +116,48 @@ void main() {
   int? player;
   int? computer;
 
-  print('Type 1 for rock, 2 for scissors and 3 for paper');
-  player = int.parse(stdin.readLineSync()!);
+  int rounds = 0;
+  int victories = 0;
 
-  var randomNumber = Random();
-  computer = randomNumber.nextInt(3);
-  computer ++;
+  while (victories == 0) {
+    print('Type 1 for rock, 2 for scissors and 3 for paper');
+    player = int.parse(stdin.readLineSync()!);
 
-  if (player == 0 || player > 3) {
-    print('You cant choose this number');
-  } else {
-    if (computer != player) {
-      if (computer == 1) {
-        if (player == 2) {
-          print('You lost, computer chose rock');
+    var randomNumber = Random();
+    computer = randomNumber.nextInt(3);
+    computer++;
+
+    if (player == 0 || player > 3) {
+      print('You cant choose this number');
+    } else {
+      rounds++;
+      if (computer != player) {
+        if (computer == 1) {
+          if (player == 2) {
+            print('You lost, computer chose rock');
+          } else {
+            print('You won, computer chose rock');
+            victories++;
+          }
+        } else if (computer == 2) {
+          if (player == 3) {
+            print('You lost, computer chose scissors');
+          } else {
+            print('You won, computer chose scissors');
+            victories++;
+          }
         } else {
-          print('You won, computer chose rock');
-        }
-      } else if (computer == 2) {
-        if (player == 3) {
-          print('You lost, computer chose scissors');
-        } else {
-          print('You won, computer chose scissors');
+          if (player == 1) {
+            print('You lost, computer chose paper');
+          } else {
+            print('You won, computer chose paper');
+            victories++;
+          }
         }
       } else {
-        if (player == 1) {
-          print('You lost, computer chose paper');
-        } else {
-          print('You won, computer chose paper');
-        }
+        print('We are tied my friend :)');
       }
-    } else {
-      print('We are tied my friend :)');
     }
   }
+  print('You won after $rounds rounds');
 }
