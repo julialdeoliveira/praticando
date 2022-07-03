@@ -113,51 +113,106 @@ void main() {
 
 // Ask for player’s input, compare them, print out a message to the winner.
 
-  int? player;
-  int? computer;
+//   int? player;
+//   int? computer;
 
-  int rounds = 0;
-  int victories = 0;
+//   int rounds = 0;
+//   int victories = 0;
 
-  while (victories == 0) {
-    print('Type 1 for rock, 2 for scissors and 3 for paper');
-    player = int.parse(stdin.readLineSync()!);
+//   while (victories == 0) {
+//     print('Type 1 for rock, 2 for scissors and 3 for paper');
+//     player = int.parse(stdin.readLineSync()!);
 
-    var randomNumber = Random();
-    computer = randomNumber.nextInt(3);
-    computer++;
+//     var randomNumber = Random();
+//     computer = randomNumber.nextInt(3);
+//     computer++;
 
-    if (player == 0 || player > 3) {
-      print('You cant choose this number');
-    } else {
-      rounds++;
-      if (computer != player) {
-        if (computer == 1) {
-          if (player == 2) {
-            print('You lost, computer chose rock');
-          } else {
-            print('You won, computer chose rock');
-            victories++;
-          }
-        } else if (computer == 2) {
-          if (player == 3) {
-            print('You lost, computer chose scissors');
-          } else {
-            print('You won, computer chose scissors');
-            victories++;
-          }
-        } else {
-          if (player == 1) {
-            print('You lost, computer chose paper');
-          } else {
-            print('You won, computer chose paper');
-            victories++;
-          }
-        }
-      } else {
-        print('We are tied my friend :)');
-      }
+//     if (player == 0 || player > 3) {
+//       print('You cant choose this number');
+//     } else {
+//       rounds++;
+//       if (computer != player) {
+//         if (computer == 1) {
+//           if (player == 2) {
+//             print('You lost, computer chose rock');
+//           } else {
+//             print('You won, computer chose rock');
+//             victories++;
+//           }
+//         } else if (computer == 2) {
+//           if (player == 3) {
+//             print('You lost, computer chose scissors');
+//           } else {
+//             print('You won, computer chose scissors');
+//             victories++;
+//           }
+//         } else {
+//           if (player == 1) {
+//             print('You lost, computer chose paper');
+//           } else {
+//             print('You won, computer chose paper');
+//             victories++;
+//           }
+//         }
+//       } else {
+//         print('We are tied my friend :)');
+//       }
+//     }
+//   }
+//   print('You won after $rounds rounds');
+
+// Exercise 9
+// Generate a random number between 1 and 100. Ask the user to guess the number, then tell
+// them whether they guessed too low, too high, or exactly right.
+
+// // Keep track of how many guesses the user has taken, and when the game ends, print this out.
+
+//   var randomNumber = Random();
+//   var generateRandom = randomNumber.nextInt(100);
+//   int guesses = 0;
+//   int rightGuess = 0;
+
+//   while (rightGuess == 0) {
+//     guesses++;
+//     print('Guess a number between 1 to 100');
+//     int number = int.parse(stdin.readLineSync()!);
+
+//     if (number > 100 || number < 0) {
+//       print('You can not chose this number');
+//       guesses--;
+//     } else if (number == generateRandom) {
+//       print('You guessed it right');
+//       rightGuess++;
+//     } else if (number > generateRandom) {
+//       print('You guessed too high my dear');
+//     } else {
+//       print('You guessed too low my dear');
+//     }
+//   }
+//   print('You got it after $guesses guesses. The number was $generateRandom');
+
+// Exercise 10
+// Ask the user for a number and determine whether the number is prime or not.
+
+// Do it using a function
+
+  print('Type a number');
+  int userAnswer = int.parse(stdin.readLineSync()!);
+
+  isThisPrime(userAnswer);
+}
+
+void isThisPrime(int userAnswer) {
+  List<int> listDividers = [];
+
+  for (int i = 1; i <= userAnswer; i++) {
+    if (userAnswer % i == 0) {
+      (listDividers.add(i));
     }
   }
-  print('You won after $rounds rounds');
+  if (listDividers.length == 2) {
+    print('The dividers of $userAnswer are $listDividers, $userAnswer is a prime number');
+  } else {
+    print('The dividers of $userAnswer are $listDividers, $userAnswer is NOT a prime number');
+  }
 }
