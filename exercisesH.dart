@@ -196,23 +196,39 @@ void main() {
 
 // Do it using a function
 
-  print('Type a number');
-  int userAnswer = int.parse(stdin.readLineSync()!);
+//   print('Type a number');
+//   int userAnswer = int.parse(stdin.readLineSync()!);
 
-  isThisPrime(userAnswer);
+//   isThisPrime(userAnswer);
+// }
+
+// void isThisPrime(int userAnswer) {
+//   List<int> listDividers = [];
+
+//   for (int i = 1; i <= userAnswer; i++) {
+//     if (userAnswer % i == 0) {
+//       (listDividers.add(i));
+//     }
+//   }
+//   if (listDividers.length == 2) {
+//     print('The dividers of $userAnswer are $listDividers, $userAnswer is a prime number');
+//   } else {
+//     print('The dividers of $userAnswer are $listDividers, $userAnswer is NOT a prime number');
+//   }
+
+// Exercise 11
+// Write a program that takes a list of numbers for example
+
+// a = [5, 10, 15, 20, 25]
+// and makes a new list of only the first and last elements of the given list. For practice, write this code inside a function.
+
+List <int> listA = [5, 10, 15, 20, 25];
+List <int> listB = [];
+listFunction(listA, listB);
 }
+void listFunction(listA, listB){
+  (listB.add(listA.first));
+  (listB.add(listA.last));
+  print (listB);
 
-void isThisPrime(int userAnswer) {
-  List<int> listDividers = [];
-
-  for (int i = 1; i <= userAnswer; i++) {
-    if (userAnswer % i == 0) {
-      (listDividers.add(i));
-    }
-  }
-  if (listDividers.length == 2) {
-    print('The dividers of $userAnswer are $listDividers, $userAnswer is a prime number');
-  } else {
-    print('The dividers of $userAnswer are $listDividers, $userAnswer is NOT a prime number');
-  }
 }
