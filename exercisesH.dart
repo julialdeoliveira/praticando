@@ -222,13 +222,53 @@ void main() {
 // a = [5, 10, 15, 20, 25]
 // and makes a new list of only the first and last elements of the given list. For practice, write this code inside a function.
 
-List <int> listA = [5, 10, 15, 20, 25];
-List <int> listB = [];
-listFunction(listA, listB);
-}
-void listFunction(listA, listB){
-  (listB.add(listA.first));
-  (listB.add(listA.last));
-  print (listB);
+// List <int> listA = [5, 10, 15, 20, 25];
+// List <int> listB = [];
+// listFunction(listA, listB);
+// }
+// void listFunction(listA, listB){
+//   (listB.add(listA.first));
+//   (listB.add(listA.last));
+//   print (listB);
+
+// }
+
+// Exercise 12
+// Write a program that asks the user how many Fibonnaci numbers to generate and then generates them. Take this opportunity to think
+//  about how you can use functions.
+
+// Make sure to ask the user to enter the number of numbers in the sequence to generate.
+
+//   print('How many fibonnacis do you want to generate?');
+//   int fNumber = int.parse(stdin.readLineSync()!);
+
+//   List<int> result = fiboGenerator(fNumber);
+//   print(result);
+
+// }
+
+// List <int> fiboGenerator(fNumber) {
+//   List<int> fiboList = [1, 1];
+
+//   for (var i = 0; i < fNumber; i++) {
+//     fiboList.add(fiboList[i] + fiboList[i + 1]);
+//   }
+//   return fiboList;
+// }
+
+// Exercise 13
+// Write a program (function) that takes a list and returns a new list that contains all the elements o
+// the first list minus all the duplicates.
+
+  List<int> list = [0, 1, 1, 2, 2, 3, 3];
+
+  print('The list has the elements 0, 1, 1, 2, 2, 3, 3');
+  print('Showing this list without duplicates: ');
+  print(removeDuplicates(list));
 
 }
+
+List <int> removeDuplicates(List<int> list){
+  return list.toSet().toList();
+}
+
